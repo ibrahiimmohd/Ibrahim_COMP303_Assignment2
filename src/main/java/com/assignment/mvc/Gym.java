@@ -32,8 +32,6 @@ public class Gym {
 		this.gymId = gymId;
 		this.gymLocation = gymLocation;
 		this.gymAddress = gymAddress;
-
-
 	}
 
 	public int getGymId() {
