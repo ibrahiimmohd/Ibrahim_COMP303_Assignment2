@@ -1,3 +1,9 @@
+/*  
+ * Ibrahim Ali
+ * 301022172
+ * 09-03-2021
+ * */
+
 package com.assignment.mvc;
 
 import java.util.ArrayList;
@@ -77,6 +83,9 @@ public class MembersController {
 			member.setPassword(request.getParameter("password")); 
 			
 			membersRepository.save(member);
+			
+			mview.addObject("firstName",member.getFirstName());
+			mview.addObject("lastName",member.getLastName());
 		
 			return mview;
 		}catch(Exception e) {
@@ -88,23 +97,32 @@ public class MembersController {
 	
 	@RequestMapping("/editProfile")
 	public ModelAndView editPRofile(HttpServletRequest request,HttpServletResponse response) {
-		ModelAndView mview = new ModelAndView("thankYou");
 		
-		Members member = membersRepository.getOne(Integer.parseInt(request.getParameter("memberId")));
+		try {
+			ModelAndView mview = new ModelAndView("thankYou");
+			
+			Members member = membersRepository.getOne(Integer.parseInt(request.getParameter("memberId")));
+			
+			member.setFirstName(request.getParameter("firstName"));
+			member.setLastName(request.getParameter("lastName"));
+			member.setPhone(request.getParameter("phone"));
+			member.setAddressCity(request.getParameter("addressCity"));
+			member.setPostalCode(request.getParameter("postalCode"));
+			member.setGymId(Integer.parseInt(request.getParameter("gymId")));
+			
+			membersRepository.save(member);
+			
+			mview.addObject("firstName",member.getFirstName());
+			mview.addObject("lastName",member.getLastName());
+			
+			return mview;
+			
+		}catch(Exception e) {
+			ModelAndView mview = new ModelAndView("index");
+			
+			return mview;
+		}
 		
-		member.setFirstName(request.getParameter("firstName"));
-		member.setLastName(request.getParameter("lastName"));
-		member.setPhone(request.getParameter("phone"));
-		member.setAddressCity(request.getParameter("addressCity"));
-		member.setPostalCode(request.getParameter("postalCode"));
-		member.setGymId(Integer.parseInt(request.getParameter("gymId")));
-		
-		membersRepository.save(member);
-		
-		mview.addObject("firstName",member.getFirstName());
-		mview.addObject("lastName",member.getLastName());
-		
-		return mview;
 	}
 	
 }

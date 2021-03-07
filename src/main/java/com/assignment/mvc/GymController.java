@@ -1,3 +1,9 @@
+/*  
+ * Ibrahim Ali
+ * 301022172
+ * 09-03-2021
+ * */
+
 package com.assignment.mvc;
 
 import java.util.List;
@@ -24,7 +30,6 @@ public class GymController {
 	@GetMapping("/")
 	public ModelAndView index(HttpServletRequest request,HttpServletResponse response) {
 		ModelAndView mview = new ModelAndView("index");
-
 
 		return mview;
 	}

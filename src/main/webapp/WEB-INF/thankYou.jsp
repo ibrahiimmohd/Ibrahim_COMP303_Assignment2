@@ -20,7 +20,7 @@
 	       	<div class="col-12">
 				<div class="row p-3 g-3">
 					<div class="col-12">
-						<font size="5">Thank you <span style="font-weight: bold;">${firstName} ${lastName}</span> for registering.</font>					
+						<font size="5">Thank you <span style="font-weight: bold;">${firstName} ${lastName}</span></font>									
 					</div>
 					<div class="col-12 mt-5">
 						<div class="row text-center">

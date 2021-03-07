@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center pt-5">
+            <div class="text-center mt-5">
 				<a href="${pageContext.request.contextPath}/" class="btn btn-large btn-primary">Main Page</a>
             </div>
         </form>

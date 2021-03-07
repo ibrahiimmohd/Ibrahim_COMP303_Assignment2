@@ -105,7 +105,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center pt-4">
+            <div class="text-center mt-5">
                 <a href="/" class="btn btn-lg btn-primary"> Main Page</a>
             </div>
         </form>

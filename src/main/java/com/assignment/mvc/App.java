@@ -1,3 +1,9 @@
+/*  
+ * Ibrahim Ali
+ * 301022172
+ * 09-03-2021
+ * */
+
 package com.assignment.mvc;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +28,7 @@ public class App implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-//		//Members
-//		Iterable<Members> membersIterator = membersRepository.findAll();
-//		
-//		System.out.println("All the members: ");
-//		membersIterator.forEach(item -> System.out.println(item));
-//		membersIterator.forEach(item -> "11".equals(item.getEmail()) );
-//		//Gym
-//		Iterable<Gym> gymIterator = gymRepository.findAll();
-//
-//		System.out.println("All the gyms: ");
-//		gymIterator.forEach(item -> System.out.println(item));
+
 	}
 
 }
