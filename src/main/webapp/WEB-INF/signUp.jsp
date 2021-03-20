@@ -1,11 +1,13 @@
 <!--  
  * Ibrahim Ali
  * 301022172
- * 09-03-2021
+ * 20-03-2021
  * */
  -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,9 +78,11 @@
                     </div>
                     <div class="col-4">
                          <select id="gymId" name="gymId" class="form-control">
-					        <option value="1">Toronto</option>
-					        <option value="2">Ottawa</option>
-					        <option value="3">Niagra Falls</option>								        
+
+							<c:forEach items="${gyms}" var="gym">
+						   		<option value="${gym.getGymId()}">${gym.getGymLocation()} - ${gym.getGymAddress()}</option>
+						    </c:forEach>
+						  					        
 					      </select>
                     </div>
                 </div>

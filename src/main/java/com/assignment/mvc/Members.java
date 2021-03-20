@@ -1,7 +1,7 @@
 /*  
  * Ibrahim Ali
  * 301022172
- * 09-03-2021
+ * 20-03-2021
  * */
 
 package com.assignment.mvc;
@@ -42,6 +42,19 @@ public class Members {
 	public Members(int memberId, String email, String password, String firstName, String lastName, String phone, String addressCity, String postalCode, int gymId) {
 		super();
 		this.memberId = memberId;
+		this.email = email;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phone = phone;
+		this.addressCity = addressCity;
+		this.postalCode = postalCode;
+		this.gymId = gymId;
+
+	}
+	
+	public Members(String email, String password, String firstName, String lastName, String phone, String addressCity, String postalCode, int gymId) {
+		super();
 		this.email = email;
 		this.password = password;
 		this.firstName = firstName;

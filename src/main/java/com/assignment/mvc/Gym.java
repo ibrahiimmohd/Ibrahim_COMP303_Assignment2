@@ -1,7 +1,7 @@
 /*  
  * Ibrahim Ali
  * 301022172
- * 09-03-2021
+ * 20-03-2021
  * */
 
 package com.assignment.mvc;
@@ -30,6 +30,12 @@ public class Gym {
 	public Gym(int gymId, String gymLocation, String gymAddress) {
 		super();
 		this.gymId = gymId;
+		this.gymLocation = gymLocation;
+		this.gymAddress = gymAddress;
+	}
+	
+	public Gym(String gymLocation, String gymAddress) {
+		super();
 		this.gymLocation = gymLocation;
 		this.gymAddress = gymAddress;
 	}

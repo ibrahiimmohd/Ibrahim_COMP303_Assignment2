@@ -1,7 +1,7 @@
 /*  
  * Ibrahim Ali
  * 301022172
- * 09-03-2021
+ * 20-03-2021
  * */
 
 package com.assignment.mvc;
@@ -28,6 +28,8 @@ public class MembersController {
 	@Autowired
 	private MembersRepository membersRepository;
 	
+	@Autowired
+	private GymRepository gymRepository;
 	
 	@RequestMapping("/signIn")
 	public ModelAndView signIn(HttpServletRequest request,HttpServletResponse response) {
@@ -38,6 +40,11 @@ public class MembersController {
 	@RequestMapping("/signUp")
 	public ModelAndView signUp(HttpServletRequest request,HttpServletResponse response) {
 		ModelAndView mview = new ModelAndView("signUp");
+		
+		List<Gym> gyms = gymRepository.findAll();
+		mview.addObject("gyms", gyms);
+		
+		
 		return mview;
 	}
 	
@@ -56,6 +63,9 @@ public class MembersController {
 			mview.addObject("addressCity",member.getAddressCity());
 			mview.addObject("postalCode",member.getPostalCode());
 			mview.addObject("gymId",member.getGymId());
+			
+			List<Gym> gyms = gymRepository.findAll();
+			mview.addObject("gyms", gyms);
 
 			return mview;
 		}catch(Exception e) {
